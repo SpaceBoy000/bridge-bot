@@ -708,7 +708,6 @@ app.listen(port, async () => {
   latestNonces.E = (await signerE.getTransactionCount()) - 1;
   latestNonces.X = (await signerX.getTransactionCount()) - 1;
   console.log(`Express app listening at port ${port}`);
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 // const https = require('https');
