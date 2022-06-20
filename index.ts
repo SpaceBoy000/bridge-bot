@@ -702,7 +702,7 @@ app.get("/hardresetnonces", async (req: any, res: any) => {
     res.status(400).send(error.reason || error.message);
   }
 });
-const port = process.env.PORT || 80;
+const port = process.env.PORT;
 app.listen(port, async () => {
   latestNonces.B = (await signerB.getTransactionCount()) - 1;
   latestNonces.E = (await signerE.getTransactionCount()) - 1;
