@@ -702,12 +702,13 @@ app.get("/hardresetnonces", async (req: any, res: any) => {
     res.status(400).send(error.reason || error.message);
   }
 });
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 app.listen(port, async () => {
   latestNonces.B = (await signerB.getTransactionCount()) - 1;
   latestNonces.E = (await signerE.getTransactionCount()) - 1;
   latestNonces.X = (await signerX.getTransactionCount()) - 1;
   console.log(`Express app listening at port ${port}`);
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 // const https = require('https');
